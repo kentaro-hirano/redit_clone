@@ -1,0 +1,6 @@
+<% @communities.each do |community| %>
+  <div class="card">
+    <h3><%= community.name %></h3>
+    <%= simple_format community.bio %>
+  </div>
+<% end %>

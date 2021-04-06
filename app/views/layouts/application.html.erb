@@ -10,6 +10,11 @@
 
   <body>
     <%= render partial: "layouts/header" %>
+    <% flash.each do |key, value| %>
+      <p class="alert alert-<%= key %>">
+        <%= value %>
+      </p>
+    <% end %>
     <%= yield %>
     
     <%= render partial: "layouts/footer" %>
