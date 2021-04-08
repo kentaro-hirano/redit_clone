@@ -8,7 +8,7 @@
         <div class="col-sm-3">
             Trending1
         </div>
-        <div class="col-sm-3">
+         <div class="col-sm-3">
             Trending2
         </div>
         <div class="col-sm-3">
@@ -19,21 +19,26 @@
         </div>
     </div>
     <div class="row mt-4">
-        <div class="col-8">
+        <div class="col">
             <p class="h5">Populur Posts</p>
         </div>
     </div>
     <div class="row">
         <div class="col-8">
-            Left col(wide)
+            <% @posts.each do |post| %>
+                <div class="card p-3">
+                    <h4><%= link_to post.title, community_post_path(post.community_id, post) %></h4>
+                    <p><%= truncate post.body, length: 200 %></p>
+                </div>
+            <% end %>
         </div>
         <div class="col-4">
             <p class="h5 mb-4">Up and coming communicates</p>
             <div class="card">
                 <ul class="list-group list-group-flush">
-                    <div class="list-group-item">hoge hoge hoge</div>
-                    <div class="list-group-item">hoge hoge hoge</div>
-                    <div class="list-group-item">hoge hoge hoge</div>
+                   <% @communities.each do |community| %>
+                       <li class="list-group-item"><%= link_to community.name, community_path(community)  %></li>
+                   <% end %>
                 </ul>
             </div>
             <%= link_to "View all", communities_path, class: "btn btn-primary mt-3" %>
