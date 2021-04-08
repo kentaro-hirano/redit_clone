@@ -1,2 +1,12 @@
-<h1>Communities#show</h1>
-<p>Find me in app/views/communities/show.html.erb</p>
+<%= link_to "Create new Post", new_community_post_path(@community), class: "btn btn-primary float-right" %>
+
+<%= @community.name %>
+
+<%= @posts.each do |post| %>
+    <h4><%= link_to post.title, community_post_path(@community, post) %></h4>
+    <p><%= truncate post.body, length: 200 %></p>
+<% end %>
+
+<small>
+    <p><%= simple_format @community.rules %></p>
+</small>
