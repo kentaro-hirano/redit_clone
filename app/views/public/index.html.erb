@@ -1,23 +1,25 @@
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <p class="h5">Trending Today he</p>
+    <% unless account_signed_in? %>
+        <div class="row">
+            <div class="col">
+                <p class="h5">Trending Today</p>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-3">
-            Trending1
+        <div class="row">
+            <div class="col-sm-3">
+                Trending1
+            </div>
+             <div class="col-sm-3">
+                Trending2
+            </div>
+            <div class="col-sm-3">
+                Trending3
+            </div>
+            <div class="col-sm-3">
+                Trending4
+            </div>
         </div>
-         <div class="col-sm-3">
-            Trending2
-        </div>
-        <div class="col-sm-3">
-            Trending3
-        </div>
-        <div class="col-sm-3">
-            Trending4
-        </div>
-    </div>
+    <% end %>
     <div class="row mt-4">
         <div class="col">
             <p class="h5">Populur Posts</p>
