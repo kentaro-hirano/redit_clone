@@ -9,21 +9,21 @@
   </head>
 
   <body>
-    
+
     <%= render partial: "layouts/header" %>
     <% flash.each do |key, value| %>
       <p class="alert alert-<%= key %>">
         <%= value %>
       </p>
     <% end %>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <%= yield %>
+      <div class="container bg-light">
+        <div class="row">
+          <div class="col-sm-12">
+            <%= yield %>
+          </div>
         </div>
       </div>
-    </div>
-    
+
     <%= render partial: "layouts/footer" %>
   </body>
 </html>
