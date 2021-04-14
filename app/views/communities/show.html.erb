@@ -1,11 +1,8 @@
 <%= link_to "Create new Post", new_community_post_path(@community), class: "btn btn-primary float-right" %>
 
-<%= @community.name %>
+<h3><%= @community.name %></h3>
 
-<%= @posts.each do |post| %>
-    <h4><%= link_to post.title, community_post_path(@community, post) %></h4>
-    <p><%= truncate post.body, length: 200 %></p>
-<% end %>
+ <%= render "posts/list", posts: @posts %>
 
 <small>
     <p><%= simple_format @community.rules %></p>

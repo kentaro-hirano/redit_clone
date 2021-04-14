@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-8">
-
+      <%= render "posts/list", posts: @posts %>
     </div>
     <div class="col-sm-4">
       <p class="h4"><%= @profile.full_name %></p>
       <p><%= @profile.username %></p>
-      <p>simple_format(aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaa</p>
+      <p>aaaaaaaaaaaa</p>
       <p><%= @profile.created_at.strftime("%d/%M/%Y") %></p>
     </div>
   </div>
