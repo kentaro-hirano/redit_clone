@@ -1,0 +1,4 @@
+<%= form_with model: subscription do |f|  %>
+  <%= f.hidden_field :community_id, value: community.id %>
+  <%= f.submit "join Community", class: "btn btn-success text-uppercase float-right" %>
+<% end %>
