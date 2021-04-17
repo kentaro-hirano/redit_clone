@@ -1,2 +1,12 @@
 <h2><%= @post.title %></h2>
 <%= simple_format @post.body %>
+
+<div id= "post-comments">
+    <%= render "posts/comments", comments: @comments %>
+</div>
+<h5>Leave a Comment</h5>
+<%= form_for @comment do |f| %>
+    <%= f.hidden_field :post_id, value: @post.id %>
+    <%= f.text_area :message, placeholder: "Your comment goes here", class: "form-control" %>
+    <%= f.submit "Submit Comment", class: "btn btn-success mt-3" %>
+<% end %>
